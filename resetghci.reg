@@ -1,0 +1,4 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Haskell\WinGHCi 1.0.6]
+"WorkingDir"="C:\\z_develop\\code\\github\\HaskellPractice"

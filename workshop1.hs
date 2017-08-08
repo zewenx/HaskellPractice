@@ -1,6 +1,6 @@
 -- @Author: zewen xu
 -- @Date:   2017-08-04 17:16:41
--- @Last Modified time: 2017-08-04 20:16:16
+-- @Last Modified time: 2017-08-08 23:27:49
 
 
 lens :: [a]->Int
@@ -21,6 +21,13 @@ revs :: [q]->[q]
 revs [] = []
 revs (s:ss) = kkp (revs ss) [s]
 
-+++ :: [s]->[s]->[s]
-+++ [] b = b
-+++ (a:ass) b = a:+++ ass b
+xor :: Bool->Bool->Bool
+xor a b = a==b
+
+
+getEle (s:ss) 1 = s
+getEle (s:ss) a = getEle ss (a-1)
+
+listsum :: Num t => [t] -> t
+listsum [] = 0
+listsum s = (head s) + listsum (tail s)
