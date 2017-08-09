@@ -1,7 +1,6 @@
 -- @Author: zewen xu
 -- @Date:   2017-08-04 17:16:41
--- @Last Modified time: 2017-08-08 23:27:49
-
+-- @Last Modified time: 2017-08-09 21:00:02
 
 lens :: [a]->Int
 lens [] = 0
@@ -24,9 +23,11 @@ revs (s:ss) = kkp (revs ss) [s]
 xor :: Bool->Bool->Bool
 xor a b = a==b
 
-
-getEle (s:ss) 1 = s
-getEle (s:ss) a = getEle ss (a-1)
+getEle :: [Int]->Int->Int
+getEle s a
+ | a == 1 = head s
+ | a > lens s = -1
+ | otherwise = getEle (tail s) (a-1)
 
 listsum :: Num t => [t] -> t
 listsum [] = 0
