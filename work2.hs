@@ -1,7 +1,7 @@
 -- @Author: anchen
 -- @Date:   2017-08-11 15:37:23
 -- @Last Modified by:   anchen
--- @Last Modified time: 2017-08-18 15:41:44
+-- @Last Modified time: 2017-08-22 22:32:29
 
 factorial :: Int -> Int
 factorial n 
@@ -47,3 +47,6 @@ abool = oneCard > twoCard
 
 instance Show Rank where
     show = printRank2
+
+data SpecialCard = Red | Black
+data AllCard = NormalCard Suit Rank | SpecialCard SpecialCard
