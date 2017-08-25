@@ -1,8 +1,9 @@
 -- @Author: anchen
 -- @Date:   2017-08-11 15:37:23
 -- @Last Modified by:   anchen
--- @Last Modified time: 2017-08-22 22:32:29
+-- @Last Modified time: 2017-08-25 12:52:48
 
+--workshop 2
 factorial :: Int -> Int
 factorial n 
     | n==1 = 1
@@ -20,7 +21,26 @@ longestPrefix (a:as) (b:bs)
     | a == b = [a] ++ longestPrefix as bs
     | otherwise = []
 
+--Q6
+translateFromC_Count :: Int->Int->Int
+translateFromC_Count n c
+    | c == 0 = n
+    | c > 0 && n > 100 = translateFromC_Count (n-10) (c-1) 
+    | c > 0 && n <=100 = translateFromC_Count (n+11) (c+1)
 
+translateFromC :: Int -> Int
+translateFromC a = translateFromC_Count a 1
+
+--Q7
+getList :: Int -> Int -> [Int]
+getList min max 
+    | min < max = min: getList (min +1) max
+    | otherwise = [min]
+
+
+
+
+-- week 2 lecture
 data Gender = Male | Female
 
 
