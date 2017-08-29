@@ -9,7 +9,7 @@ module Main where
 import Data.List
 import System.Environment
 import System.Exit
---import Proj1
+import Proj1
 
 -- | Compute the correct answer to a guess.  First argument is the 
 --   target, second is the guess.
