@@ -1,7 +1,7 @@
 -- @Author: anchen
 -- @Date:   2017-08-28 17:13:09
 -- @Last Modified by:   anchen
--- @Last Modified time: 2017-08-29 12:13:57
+-- @Last Modified time: 2017-08-29 13:36:54
 
 --module Proj1 (initialGuess, nextGuess, GameState) where
 
@@ -18,7 +18,7 @@ import Data.HashMap.Strict
 
 data PitchPair = PitchPair String String String
 
-note = ["A","B","C"]
+note = ["A","B","C","D","E","F","G"]
 octave = ["1","2","3"]
 
 generatePitchs :: [String]->[String]->[String]
@@ -67,12 +67,13 @@ maxx = resultCategory (head guessList) (tail guessList)
 maxxx = countList maxx
 
 bestGuess :: [[String]]->[[String]] -> Int -> [String] -> [String]
-bestGuess _ [[]] _ tempGuess = tempGuess
+bestGuess _ [] _ tempGuess = tempGuess
 bestGuess from (a:as) tempCount tempGuess = 
-        let aResult = countList (resultCategory a (from++as)) in 
-        if aResult < tempCount 
-            then bestGuess (from++[a]) as aResult a
+    let aResult = countList (resultCategory a (from++as)) in 
+    if aResult < tempCount 
+        then bestGuess (from++[a]) as aResult a
         else bestGuess (from++[a]) as tempCount tempGuess
+
 best = bestGuess [[]] guessList 1300 []
 
 response :: [String] -> [String] -> (Int,Int,Int)
@@ -87,6 +88,13 @@ response target guess = (right, rightNote, rightOctave)
 
 eqNth :: Eq a => Int -> [a] -> [a] -> Bool
 eqNth n l1 l2 = (l1 !! n) == (l2 !! n)
---initialGuess : : ([String],GameState)
 
---nextGuess :: ( [String],GameState) → (Int,Int,Int) → ([String],GameState)
+data GameState = GameState [[String]]
+
+initialGuess :: ([String],GameState)
+initialGuess = (["A1","B1","C2"],guessList
+
+
+nextGuess :: ([String],GameState) → (Int,Int,Int) → ([String],GameState)
+nextGuess (currentGuess,(a:as)) (r1,r2,r3) =
+     
