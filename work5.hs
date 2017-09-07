@@ -1,7 +1,7 @@
 -- @Author: anchen
 -- @Date:   2017-09-06 09:59:02
 -- @Last Modified by:   anchen
--- @Last Modified time: 2017-09-06 11:33:57
+-- @Last Modified time: 2017-09-07 18:40:29
 
 import Data.List
 -- lecture week 5
@@ -52,10 +52,18 @@ ff3 x
     | (length x) < 3 = []
     | otherwise = [(a,b,c)|a<-x,b<-x,c<-x, a/=b, b /=c , a/= c]
 
---* ????
+-- ????
 --get_names1 :: [Customer] -> [String]
 --get_names1 customers = map customer_name customers
 --
 --get_names2 :: [Customer] -> [String]
 --get_names2 = map customer_name 
 --
+
+
+
+getInt :: Int -> Int ->Int
+getInt = getNum
+
+getNum :: Int -> Int -> Int 
+getNum a b = if (a>b) then a else b
