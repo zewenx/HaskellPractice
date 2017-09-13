@@ -1,7 +1,8 @@
 -- @Author: anchen
 -- @Date:   2017-09-06 09:59:02
 -- @Last Modified by:   anchen
--- @Last Modified time: 2017-09-13 13:21:58
+-- @Last Modified time: 2017-09-13 14:00:09
+
 
 import Data.List
 -- lecture week 5
@@ -31,6 +32,11 @@ isEven_ a = a `mod` 2 ==0
 
 anonymouts = filters ( \x -> x `mod` 2 == 0) [2,-1,0,4,6,7,-3,9,-4]
 
+getInt :: Int -> Int ->Int
+getInt = getNum
+
+getNum :: Int -> Int -> Int 
+getNum a b = if (a>b) then a else b
 
 generateGuessList :: [String]-> Int->[[String]]
 generateGuessList [] _ =  [[]]
@@ -53,6 +59,7 @@ ff3 x
     | otherwise = [(a,b,c)|a<-x,b<-x,c<-x, a/=b, b /=c , a/= c]
 
 --
+
 --get_names1 :: [Customer] -> [String]
 --get_names1 customers = map customer_name customers
 --
