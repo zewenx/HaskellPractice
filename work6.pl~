@@ -1,0 +1,10 @@
+%!/usr/bin/perl
+% @Author: anchen
+% @Date:   2017-09-15 15:14:03
+% @Last Modified by:   anchen
+% @Last Modified time: 2017-09-15 15:16:06
+parent(a,d)
+parent(a,c)
+parent(b,c)
+parent(c,e)
+parent(d,e)

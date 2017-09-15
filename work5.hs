@@ -1,7 +1,7 @@
 -- @Author: anchen
 -- @Date:   2017-09-06 09:59:02
 -- @Last Modified by:   anchen
--- @Last Modified time: 2017-09-13 14:00:09
+-- @Last Modified time: 2017-09-13 17:20:28
 
 
 import Data.List
@@ -112,3 +112,7 @@ sqrtPM x
 
 
 allSqrts s= foldl (++) [] (map sqrtPM s) 
+
+foldls :: (e -> v -> v) -> v -> [e] -> v
+foldls _ base [] = base  
+foldls f base (x:xs) = let newbase = f x base in foldls f newbase xs
